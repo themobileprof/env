@@ -6,8 +6,8 @@ call plug#begin('~/.local/share/nvim/plugged')
 	Plug 'itchyny/lightline.vim'
 	Plug 'jiangmiao/auto-pairs'
 	Plug 'preservim/nerdcommenter'
-"	Plug 'neoclide/coc.nvim', {'branch': 'release'}
-    Plug 'neoclide/coc.nvim', {'do': { -> coc#util#install()}}
+	Plug 'neoclide/coc.nvim', {'branch': 'release'}
+"	Plug 'neoclide/coc.nvim', {'do': { -> coc#util#install()}}
     Plug 'tpope/vim-surround'
     Plug 'posva/vim-vue'
 	Plug 'junegunn/fzf.vim'
