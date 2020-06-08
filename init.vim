@@ -6,19 +6,19 @@ call plug#begin('~/.local/share/nvim/plugged')
 	Plug 'itchyny/lightline.vim'
 	Plug 'jiangmiao/auto-pairs'
 	Plug 'preservim/nerdcommenter'
-	Plug 'neoclide/coc.nvim', {'branch': 'release'}
-	Plug 'tpope/vim-surround'
+"	Plug 'neoclide/coc.nvim', {'branch': 'release'}
+    Plug 'neoclide/coc.nvim', {'do': { -> coc#util#install()}}
+    Plug 'tpope/vim-surround'
+    Plug 'posva/vim-vue'
 	Plug 'junegunn/fzf.vim'
 call plug#end()
 
 set nocompatible            " disable compatibility to old-time vi
 set showmatch               " show matching brackets.
 set ignorecase              " case insensitive matching
-set mouse=v                 " middle-click paste with mouse
 set hlsearch                " highlight search results
 set tabstop=4               " number of columns occupied by a tab character
 set softtabstop=4           " see multiple spaces as tabstops so <BS> does the right thing
-set expandtab               " converts tabs to white space
 set shiftwidth=4            " width for autoindents
 set autoindent              " indent a new line the same amount as the line just typed
 set number                  " add line numbers
@@ -34,6 +34,12 @@ let g:user_emmet_leader_key=','
 " Use Ctrl-space to trigger completion
 inoremap <silent><expr> <c-space> coc#refresh()
 
+" Open file for edit use Ctrl+P hotkey, to search text in project use Alt+F
+nnoremap <A-f> :Ag<CR>
+nnoremap <C-p> :Files<CR>
+
+" Configure Prettier
+command! -nargs=0 Prettier :CocCommand prettier.formatFile
 
 " Use tab for trigger completion with characters ahead and navigate.
 " Use command ':verbose imap <tab>' to make sure tab is not mapped by other plugin.
