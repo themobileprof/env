@@ -6,10 +6,10 @@ call plug#begin('~/.local/share/nvim/plugged')
 	Plug 'itchyny/lightline.vim'
 	Plug 'jiangmiao/auto-pairs'
 	Plug 'preservim/nerdcommenter'
-	Plug 'neoclide/coc.nvim', {'branch': 'release'}
-"	Plug 'neoclide/coc.nvim', {'do': { -> coc#util#install()}}
-    Plug 'tpope/vim-surround'
-    Plug 'posva/vim-vue'
+"	Plug 'neoclide/coc.nvim', {'branch': 'release'}
+"	"Plug 'neoclide/coc.nvim', {'do': { -> coc#util#install()}} //comment this
+    	Plug 'tpope/vim-surround'
+"    	Plug 'posva/vim-vue'
 	Plug 'junegunn/fzf.vim'
 call plug#end()
 
@@ -32,22 +32,22 @@ nmap <C-o> :NERDTreeToggle<CR>
 let g:user_emmet_leader_key=','
 
 " Use Ctrl-space to trigger completion
-inoremap <silent><expr> <c-space> coc#refresh()
+" inoremap <silent><expr> <c-space> coc#refresh()
 
 " Open file for edit use Ctrl+P hotkey, to search text in project use Alt+F
 nnoremap <A-f> :Ag<CR>
 nnoremap <C-p> :Files<CR>
 
 " Configure Prettier
-command! -nargs=0 Prettier :CocCommand prettier.formatFile
+" command! -nargs=0 Prettier :CocCommand prettier.formatFile
 
 " Use tab for trigger completion with characters ahead and navigate.
 " Use command ':verbose imap <tab>' to make sure tab is not mapped by other plugin.
-inoremap <silent><expr> <TAB>
-      \ pumvisible() ? "\<C-n>" :
-      \ <SID>check_back_space() ? "\<TAB>" :
-      \ coc#refresh()
-inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
+" inoremap <silent><expr> <TAB>
+"      \ pumvisible() ? "\<C-n>" :
+"      \ <SID>check_back_space() ? "\<TAB>" :
+"      \ coc#refresh()
+" inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
 
 function! s:check_back_space() abort
   let col = col('.') - 1
